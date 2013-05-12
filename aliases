@@ -1,0 +1,17 @@
+# Git aliases
+
+alias gca='git commit -a'
+alias gco='git checkout'
+alias gs='git status'
+alias gcam='git commit -a -m '
+alias grhard='git reset --hard'
+alias grom='git rebase origin master'
+
+
+# Rails aliases
+
+alias renv='echo $RAILS_ENV'
+alias renvd='export RAILS_ENV=development'
+alias renvt='export RAILS_ENV=testing'
+alias renvp='export RAILS_ENV=production'
+
