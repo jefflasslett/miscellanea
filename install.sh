@@ -40,7 +40,7 @@ fi
 if [ ! -d $HOME/.yi ]
 then
   mkdir $HOME/.yi
-  (cd $HOME/.yi; ln -s $conf_d/yi yi.hs)
+  (cd $HOME/.yi; ln -s $conf_d/yi.hs yi.hs)
 fi
 
 

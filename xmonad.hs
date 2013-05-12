@@ -5,5 +5,5 @@ myConfig =
   defaultConfig { terminal = tmux }
                
 
-xmonad myConfig
+main = xmonad myConfig
 
