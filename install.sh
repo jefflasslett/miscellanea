@@ -2,7 +2,9 @@
 
 # Get the absolute path of this script.  It should be kept with the 
 # conf files that are to be installed.
-conf_d=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)/`basename "${BASH_SOURCE[0]}"`
+conf_d=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)
+
+echo "Config dir is \"$conf_d\""
 
 if [ ! -e $HOME/.aliases ]
 then
