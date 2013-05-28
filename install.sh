@@ -16,6 +16,11 @@ then
   (cd $HOME; ln -s $conf_d/tmux.conf .tmux.conf)
 fi
 
+if [ ! -e $HOME/.Xdefaults ]
+then
+  (cd $HOME; ln -s $conf_d/Xdefaults .Xdefaults)
+fi
+
 if [ ! -e $HOME/.vimrc ]
 then
   (cd $HOME; ln -s $conf_d/vimrc .vimrc)
