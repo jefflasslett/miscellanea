@@ -2,7 +2,7 @@ import XMonad
 
 
 myConfig =
-  defaultConfig { terminal = tmux }
+  defaultConfig { terminal = "urxvt" }
                
 
 main = xmonad myConfig
