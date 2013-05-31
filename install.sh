@@ -11,6 +11,11 @@ then
   (cd $HOME; ln -s $conf_d/aliases .aliases)
 fi
 
+if [ ! -e $HOME/.bashrc ]
+then
+  (cd $HOME; ln -s $conf_d/bashrc .bashrc)
+fi
+
 if [ ! -e $HOME/.tmux.conf ]
 then
   (cd $HOME; ln -s $conf_d/tmux.conf .tmux.conf)
@@ -46,6 +51,12 @@ if [ ! -d $HOME/.yi ]
 then
   mkdir $HOME/.yi
   (cd $HOME/.yi; ln -s $conf_d/yi.hs yi.hs)
+fi
+
+if [ ! -d $HOME/bin ]
+then
+  mkdir $HOME/bin
+  (cd $HOME/bin; ln -s $conf_d/gssb.pl gssb.pl)
 fi
 
 
