@@ -2,7 +2,7 @@ import XMonad
 
 
 myConfig =
-  defaultConfig { terminal = "urxvt" }
+  defaultConfig { terminal = "sakura" }
                
 
 main = xmonad myConfig
