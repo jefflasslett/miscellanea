@@ -16,6 +16,11 @@ then
   (cd $HOME; ln -s $conf_d/bashrc .bashrc)
 fi
 
+if [ ! -e $HOME/term_colours.sh ]
+then
+  (cd $HOME; ln -s $conf_d/term_colours.sh term_colours.sh)
+fi
+
 if [ ! -e $HOME/.tmux.conf ]
 then
   (cd $HOME; ln -s $conf_d/tmux.conf .tmux.conf)
