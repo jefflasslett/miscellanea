@@ -9,9 +9,8 @@ function prompt() {
 
   if [ "$gs_out" != "n/a" ]
   then
-    # There's got to be a better way than this.
-    __GIT_BRANCH=$(echo "$gs_out" | awk '{print $1}')
-    __GIT_STATUS=$(echo "$gs_out" | awk '{print $2}')
+    __GIT_BRANCH=${gs_out% *}
+    __GIT_STATUS=${gs_out#* }
     case $__GIT_STATUS in
       'dirty')
         PS1="\[$Blue\][\u@\h]\[$Color_Off\] git:\[$IRed\]$__GIT_BRANCH\[$Color_Off\]\n\w \[$Cyan\][$RAILS_ENV]\[$Color_Off\]> "
