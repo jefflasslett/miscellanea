@@ -7,7 +7,8 @@ my $gs_out = `git status -sb 2>&1`;
 my @gs_out_lines = split( /\n/, $gs_out );
 
 if ( $gs_out_lines[0] =~ /^fatal: Not a git repository/ ) {
-  print 'n/a';
+  undef( $ENV{__GIT_STATUS} );
+  undef( $ENV{__GIT_BRANCH} );
   exit 0;
 }
 
@@ -20,10 +21,6 @@ if ( ( $#gs_out_lines + 1 ) == 1 ) {
 
 my ( undef, $branch ) = split( /\s+/, $gs_out_lines[ 0 ] ) ;
 
-my %status_colour_map = ( 'clean' => "\033[1;34m" 
-                        , 'dirty' => "\033[1;31m" 
-                        );
-
-print $status_colour_map{ $status }."[$branch]"."\033[m";
-#print '\e[0;35m'."[$branch]".'\e[m';
+$ENV{__GIT_BRANCH} = $branch;
+$ENV{__GIT_STATUS} = $status;
 
