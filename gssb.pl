@@ -7,8 +7,7 @@ my $gs_out = `git status -sb 2>&1`;
 my @gs_out_lines = split( /\n/, $gs_out );
 
 if ( $gs_out_lines[0] =~ /^fatal: Not a git repository/ ) {
-  undef( $ENV{__GIT_STATUS} );
-  undef( $ENV{__GIT_BRANCH} );
+  print "n/a";
   exit 0;
 }
 
@@ -21,6 +20,5 @@ if ( ( $#gs_out_lines + 1 ) == 1 ) {
 
 my ( undef, $branch ) = split( /\s+/, $gs_out_lines[ 0 ] ) ;
 
-$ENV{__GIT_BRANCH} = $branch;
-$ENV{__GIT_STATUS} = $status;
+print "$branch $status";
 
