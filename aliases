@@ -7,6 +7,8 @@ alias l='ls -al'
 
 alias gca='git commit -a'
 alias gco='git checkout'
+alias gcm='git checkout master'
+alias gpr='git pull --rebase'
 alias gs='git status'
 alias gcam='git commit -a -m '
 alias grhard='git reset --hard'
