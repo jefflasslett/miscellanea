@@ -11,7 +11,7 @@ alias gcm='git checkout master'
 alias gpr='git pull --rebase'
 alias gs='git status'
 alias gcam='git commit -a -m '
-alias grhard='git reset --hard'
+alias grh='git reset --hard'
 alias grom='git rebase origin master'
 
 
