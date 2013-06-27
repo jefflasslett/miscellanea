@@ -29,6 +29,6 @@ export PROMPT_COMMAND='prompt'
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:$HOME/.cabal/bin:$PATH
 
 # PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
