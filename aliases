@@ -13,6 +13,7 @@ alias gs='git status'
 alias gcam='git commit -a -m '
 alias grh='git reset --hard'
 alias grom='git rebase origin master'
+alias gl='git log --graph --color --pretty=oneline'
 
 
 # Rails aliases
