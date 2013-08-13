@@ -6,7 +6,15 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
-set guifont=inconsolata:h18
+
+let os = substitute(system('uname'), "\n", "", "")
+if os =~ "Linux"
+  " Do Linux-specific stuff.
+  set guifont=Inconsolata\ 14
+else
+  set guifont=inconsolata:h18
+endif
+
 set number
 set shell=/bin/sh
 
