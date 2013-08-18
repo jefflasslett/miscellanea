@@ -20,5 +20,5 @@ set shell=/bin/sh
 
 syntax on
 
-colorscheme mycolours
+"colorscheme mycolours
 

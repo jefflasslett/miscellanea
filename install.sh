@@ -31,19 +31,27 @@ then
   (cd $HOME; ln -s $conf_d/Xdefaults .Xdefaults)
 fi
 
-if [ ! -e $HOME/.vimrc ]
+if [ ! -d $HOME/.spf13-vim-3 ]
 then
-  (cd $HOME; ln -s $conf_d/vimrc .vimrc)
-fi
+  if [ ! -e $HOME/.vimrc ]
+  then
+    (cd $HOME; ln -s $conf_d/vimrc .vimrc)
+  fi
 
-if [ ! -d $HOME/.vim/colors ]
-then
-  mkdir -p $HOME/.vim/colors
-fi
+  if [ ! -d $HOME/.vim/colors ]
+  then
+    mkdir -p $HOME/.vim/colors
+  fi
 
-if [ ! -e $HOME/.vim/colors/mycolours.vim ]
-then
-  ln -s $conf_d/mycolours.vim $HOME/.vim/colors/mycolours.vim
+  if [ ! -e $HOME/.vim/colors/mycolours.vim ]
+  then
+    ln -s $conf_d/mycolours.vim $HOME/.vim/colors/mycolours.vim
+  fi
+else
+  if [ ! -e $HOME/.vimrc.local ]
+  then
+    (cd $HOME; ln -s $conf_d/vimrc .vimrc.local)
+  fi
 fi
 
 if [ ! -d $HOME/.xmonad ]
