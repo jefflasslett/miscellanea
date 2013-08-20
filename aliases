@@ -1,7 +1,7 @@
 # shell
 
 alias l='ls -al'
-
+alias r?='ps -ef | grep'
 
 # Git aliases
 
