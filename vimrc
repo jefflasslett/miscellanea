@@ -8,7 +8,7 @@ UnBundle    'pythoncomplete'
 UnBundle    'derekwyatt/vim-scala'
 UnBundle    'derekwyatt/vim-sbt'
 UnBundle    'beyondwords/vim-twig'
-
+UnBundle    'airblade/vim-gitgutter'
 
 set nocompatible
 set autoindent
