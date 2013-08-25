@@ -23,7 +23,7 @@ set clipboard=
 let os = substitute(system('uname'), "\n", "", "")
 if os =~ "Linux"
   " Do Linux-specific stuff.
-  set guifont=Inconsolata\ 14
+  set guifont=Inconsolata\ for\ Powerline\ 14
 else
   set guifont=Inconsolata\ for\ Powerline:h18
 endif
