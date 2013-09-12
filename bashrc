@@ -1,6 +1,7 @@
 set -o vi
 
 source $HOME/.aliases
+[[ -f "$HOME/.local_aliases" ]] && source "$HOME/.local_aliases"
 source $HOME/term_colours.sh
 
 function prompt() {
