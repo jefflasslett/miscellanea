@@ -20,6 +20,9 @@ set softtabstop=2
 set tabstop=2
 set clipboard=
 
+let g:haddock_browser = "open"
+let g:haddock_browser_callformat = "%s %s"
+
 let os = substitute(system('uname'), "\n", "", "")
 if os =~ "Linux"
   " Do Linux-specific stuff.
