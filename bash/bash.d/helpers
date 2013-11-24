@@ -8,7 +8,7 @@ BASHD_LOG="$BASHD/login"
 # Test if the shell is interactive.
 function isInteractive {
 
-  [[ "$-" = "*i*" ]]
+  [[ "$-" = *i* ]]
 }
 
 
