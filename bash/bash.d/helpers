@@ -1,0 +1,23 @@
+# Helper functions used by bash startup scripts.
+
+BASHD="$HOME/.bash.d"
+BASHD_ALL="$BASHD/all"
+BASHD_INT="$BASHD/interactive"
+BASHD_LOG="$BASHD/login"
+
+# Test if the shell is interactive.
+function isInteractive {
+
+  [[ "$-" = "*i*" ]]
+}
+
+
+# Source all the files in the given dir.
+function sourceFilesInDir( ) {
+  local dir="$1"
+
+  for f in $(ls -1 "$dir")
+  do
+    source "$dir/$f"
+  done
+}

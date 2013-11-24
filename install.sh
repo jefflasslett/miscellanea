@@ -6,19 +6,16 @@ conf_d=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)
 
 echo "Config dir is \"$conf_d\""
 
-if [ ! -e $HOME/.aliases ]
+if [ ! -d $HOME/.bash.d ]
 then
-  (cd $HOME; ln -s $conf_d/aliases .aliases)
-fi
-
-if [ ! -e $HOME/.bashrc ]
-then
-  (cd $HOME; ln -s $conf_d/bashrc .bashrc)
-fi
-
-if [ ! -e $HOME/term_colours.sh ]
-then
-  (cd $HOME; ln -s $conf_d/term_colours.sh term_colours.sh)
+  (
+    cd $HOME
+    ln -s $conf_d/bash/bash.d .bash.d
+    [[ ! -e $HOME/.bash_profile ]] && ln -s $conf_d/bash/bash_profile .bash_profile
+    [[ ! -e $HOME/.profile ]] && ln -s $conf_d/bash/bash_profile .profile
+    [[ ! -e $HOME/.bashrc ]] && ln -s $conf_d/bash/bashrc .bashrc
+    [[ ! -e $HOME/.bash_logout ]] && ln -s $conf_d/bash/bash_logout .bash_logout
+  )
 fi
 
 if [ ! -e $HOME/.tmux.conf ]

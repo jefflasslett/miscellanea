@@ -1,3 +1,4 @@
+
 # shell
 
 alias l='ls -al'
@@ -27,3 +28,4 @@ alias renvt='export RAILS_ENV=test'
 
 alias be='bundle exec'
 
+[[ -f ~/.local_aliases ]] && source ~/.local_aliases
