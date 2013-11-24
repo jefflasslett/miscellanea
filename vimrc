@@ -23,6 +23,8 @@ set clipboard=
 let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s %s"
 
+let g:spf13_no_autochdir = 1
+
 let os = substitute(system('uname'), "\n", "", "")
 if os =~ "Linux"
   " Do Linux-specific stuff.
