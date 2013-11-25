@@ -16,8 +16,9 @@ function isInteractive {
 function sourceFilesInDir( ) {
   local dir="$1"
 
-  for f in $(ls -1 "$dir")
+  for f in "$dir"/*
   do
-    source "$dir/$f"
+    [[ -f "$f" ]] || continue
+    source "$f"
   done
 }
