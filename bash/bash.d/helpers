@@ -1,9 +1,11 @@
 # Helper functions used by bash startup scripts.
 
 BASHD="$HOME/.bash.d"
-BASHD_ALL="$BASHD/all"
-BASHD_INT="$BASHD/interactive"
-BASHD_LOG="$BASHD/login"
+BASHD_GEN="$BASHD/machines/$HOSTNAME/general"
+BASHD_INT="$BASHD/machines/$HOSTNAME/interactive"
+BASHD_LOG="$BASHD/machines/$HOSTNAME/login"
+
+BASHD_PARTS="$BASHD/parts"
 
 # Test if the shell is interactive.
 function isInteractive {
@@ -12,13 +14,20 @@ function isInteractive {
 }
 
 
-# Source all the files in the given dir.
-function sourceFilesInDir( ) {
-  local dir="$1"
+# Source all the files listed in the given file.
+function sourcePartsInFile {
+  local parts_list="$1"
 
-  for f in "$dir"/*
+  [[ -f "$parts_list" ]] || return
+
+  while read p
   do
-    [[ -f "$f" ]] || continue
-    source "$f"
-  done
+
+    local part_path="$BASHD_PARTS/$p"
+
+    [[ -f "$part_path" ]] || continue
+    source "$part_path"
+
+  done < "$parts_list"
 }
+

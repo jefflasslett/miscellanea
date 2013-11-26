@@ -5,10 +5,10 @@
 
 source ~/.bash.d/helpers
 
-sourceFilesInDir "$BASHD_ALL"
-sourceFilesInDir "$BASHD_LOG"
+sourcePartsInFile "$BASHD_GEN"
+sourcePartsInFile "$BASHD_LOG"
 
-[[ isInteractive ]] && sourceFilesInDir "$BASHD_INT"
+[[ isInteractive ]] && sourcePartsInFile "$BASHD_INT"
 
 # The End.
 

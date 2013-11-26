@@ -5,8 +5,8 @@
 
 source ~/.bash.d/helpers
 
-sourceFilesInDir "$BASHD_ALL"
-sourceFilesInDir "$BASHD_INT"
+sourcePartsInFile "$BASHD_GEN"
+sourcePartsInFile "$BASHD_INT"
 
 # The End.
 
