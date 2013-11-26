@@ -3,18 +3,12 @@
 # This is executed by bash when starting a login shell, interactive or not.
 #
 
-STARTUP_FILENAME='bash_profile'
-
 source ~/.bash.d/helpers
 
 sourceFilesInDir "$BASHD_ALL"
-
 sourceFilesInDir "$BASHD_LOG"
 
-if isInteractive
-then
-  sourceFilesInDir "$BASHD_INT"
-fi
+[[ isInteractive ]] && sourceFilesInDir "$BASHD_INT"
 
 # The End.
 

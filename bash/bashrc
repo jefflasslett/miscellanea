@@ -3,8 +3,6 @@
 # This is executed by bash when starting an interactive, non-login shell.
 #
 
-STARTUP_FILENAME='bashrc'
-
 source ~/.bash.d/helpers
 
 sourceFilesInDir "$BASHD_ALL"
