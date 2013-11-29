@@ -1,0 +1,26 @@
+# Helper functions used by zsh startup scripts.
+
+ZSHD="$HOME/.zsh.d"
+ZSHD_GEN="$ZSHD/machines/$(hostname)/general"
+ZSHD_INT="$ZSHD/machines/$(hostname)/interactive"
+ZSHD_LOG="$ZSHD/machines/$(hostname)/login"
+
+ZSHD_PARTS="$ZSHD/parts"
+
+# Source all the files listed in the given file.
+function sourcePartsInFile {
+  local parts_list="$1"
+
+  [[ -f "$parts_list" ]] || return
+
+  while read p
+  do
+
+    local part_path="$ZSHD_PARTS/$p"
+
+    [[ -f "$part_path" ]] || continue
+    source "$part_path"
+
+  done < "$parts_list"
+}
+

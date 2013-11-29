@@ -1,0 +1,14 @@
+# ~/.zshrc
+#
+# This is executed by zsh when starting an interactive shell.
+# If the shell is interactive then this file is executed. 
+# This is differnt to bash, which will not use its bahsrc if
+# the shell is a login shell.
+#
+
+source ~/.zsh.d/helpers
+
+sourcePartsInFile "$ZSHD_INT"
+
+# The End.
+

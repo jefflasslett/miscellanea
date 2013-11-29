@@ -1,0 +1,31 @@
+
+autoload -U colors && colors
+
+
+function get_git_status {
+  repo_sts="[n/a]"
+
+  gs_out=$($HOME/bin/gssb.pl)
+
+  if [ "$gs_out" != "n/a" ]
+  then
+    __GIT_BRANCH=${gs_out% *}
+    __GIT_STATUS=${gs_out#* }
+
+    case $__GIT_STATUS in
+      'dirty')
+        repo_sts="%{$fg[red]%}$__GIT_BRANCH"
+        ;;
+      *)
+        export repo_sts="%{$fg[white]%}$__GIT_BRANCH"
+        ;;
+    esac
+  fi
+  echo $repo_sts
+}
+
+
+PROMPT="%{$fg[blue]%}[%n@%m]%{$reset_color%} git:$(get_git_status)%{$reset_color%} %T
+%~ %{$fg[cyan]%}[$RAILS_ENV]%{$reset_color%}> "
+
+#RPROMPT=""
