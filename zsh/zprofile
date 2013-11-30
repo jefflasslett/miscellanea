@@ -1,14 +1,11 @@
-# ~/.bash_profile
+# ~/.zsh_profile
 #
-# This is executed by bash when starting a login shell, interactive or not.
+# This is executed by zsh when starting a login shell, interactive or not.
 #
 
-source ~/.bash.d/helpers
+source ~/.zsh.d/helpers
 
-sourcePartsInFile "$BASHD_GEN"
 sourcePartsInFile "$BASHD_LOG"
-
-[[ isInteractive ]] && sourcePartsInFile "$BASHD_INT"
 
 # The End.
 
