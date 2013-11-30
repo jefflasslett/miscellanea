@@ -1,6 +1,7 @@
 
 autoload -U colors && colors
 
+setopt prompt_subst
 
 function get_git_status {
   repo_sts="[n/a]"
@@ -25,7 +26,7 @@ function get_git_status {
 }
 
 
-PROMPT="%{$fg[blue]%}[%n@%m]%{$reset_color%} git:$(get_git_status)%{$reset_color%} %T
-%~ %{$fg[cyan]%}[$RAILS_ENV]%{$reset_color%}> "
+PROMPT='\
+%{$fg[blue]%}[%n@%m]%{$reset_color%} git:$(get_git_status)%{$reset_color%} %T
+%~ %{$fg[cyan]%}[$RAILS_ENV]%{$reset_color%}> '
 
-#RPROMPT=""
