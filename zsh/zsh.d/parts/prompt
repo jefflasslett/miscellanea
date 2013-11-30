@@ -27,6 +27,8 @@ function get_git_status {
 
 
 PROMPT='\
-%{$fg[blue]%}[%n@%m]%{$reset_color%} git:$(get_git_status)%{$reset_color%} %T
+%{$fg[blue]%}[%n@%m]%{$reset_color%} git:$(get_git_status)%{$reset_color%}
 %~ %{$fg[cyan]%}[$RAILS_ENV]%{$reset_color%}> '
+
+RPROMPT='%T'
 
