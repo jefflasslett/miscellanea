@@ -1,1 +1,1 @@
-set -o vi
+setopt HIST_IGNORE_SPACE
