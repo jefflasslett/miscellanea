@@ -4,6 +4,8 @@
 alias l='ls -al'
 alias running='ps -ef | grep'
 
+alias genpw=' echo -n'
+
 # Git aliases
 
 alias gca='git commit -a'
