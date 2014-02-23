@@ -18,37 +18,21 @@ then
   )
 fi
 
-if [ ! -e $HOME/.tmux.conf ]
-then
-  (cd $HOME; ln -s $conf_d/tmux.conf .tmux.conf)
-fi
-
-if [ ! -e $HOME/.Xdefaults ]
-then
-  (cd $HOME; ln -s $conf_d/Xdefaults .Xdefaults)
-fi
+[[ ! -e $HOME/.tmux.conf ]] && (cd $HOME; ln -s $conf_d/tmux.conf .tmux.conf)
+[[ ! -e $HOME/.xinitrc ]] && (cd $HOME; ln -s $conf_d/xinitrc .xinitrc)
+[[ ! -e $HOME/.xmobarrc ]] && (cd $HOME; ln -s $conf_d/xmobarrc .xmobarrc)
+[[ ! -e $HOME/.i3status.conf ]] && (cd $HOME; ln -s $conf_d/i3status.conf .i3status.conf)
+[[ ! -e $HOME/.Xdefaults ]] && (cd $HOME; ln -s $conf_d/Xdefaults .Xdefaults)
 
 if [ ! -d $HOME/.spf13-vim-3 ]
 then
-  if [ ! -e $HOME/.vimrc ]
-  then
-    (cd $HOME; ln -s $conf_d/vimrc .vimrc)
-  fi
+  [[ ! -e $HOME/.vimrc ]] && (cd $HOME; ln -s $conf_d/vimrc .vimrc)
 
-  if [ ! -d $HOME/.vim/colors ]
-  then
-    mkdir -p $HOME/.vim/colors
-  fi
+  [[ ! -d $HOME/.vim/colors ]] && mkdir -p $HOME/.vim/colors
 
-  if [ ! -e $HOME/.vim/colors/mycolours.vim ]
-  then
-    ln -s $conf_d/mycolours.vim $HOME/.vim/colors/mycolours.vim
-  fi
+  [[ ! -e $HOME/.vim/colors/mycolours.vim ]] && ln -s $conf_d/mycolours.vim $HOME/.vim/colors/mycolours.vim
 else
-  if [ ! -e $HOME/.vimrc.local ]
-  then
-    (cd $HOME; ln -s $conf_d/vimrc .vimrc.local)
-  fi
+  [[ ! -e $HOME/.vimrc.local ]] && (cd $HOME; ln -s $conf_d/vimrc .vimrc.local)
 fi
 
 if [ ! -d $HOME/.xmonad ]
