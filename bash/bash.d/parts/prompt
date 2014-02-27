@@ -1,4 +1,8 @@
-function prompt() {
+function root_prompt() {
+  PS1="\[$Red\][\u@\h]\[$Color_Off\] git:\[$IRed\]$__GIT_BRANCH\[$Color_Off\] \A\n\w> "
+}
+
+function user_prompt() {
 
   gs_out=$($HOME/bin/gssb.pl)
 
@@ -16,6 +20,15 @@ function prompt() {
     esac
   else
     PS1="\[$Blue\][\u@\h]\[$Color_Off\] git:[n/a] \A\n\w \[$Cyan\][$RAILS_ENV]\[$Color_Off\]> "
+  fi
+}
+
+function prompt() {
+  if [[ "$USER" = 'root' ]]
+  then
+    root_prompt
+  else
+    user_prompt
   fi
 }
 
