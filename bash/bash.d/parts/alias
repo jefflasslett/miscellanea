@@ -27,4 +27,6 @@ alias renvt='export RAILS_ENV=test'
 
 alias be='bundle exec'
 
+# misc
+alias tmux='tmux -2'
 [[ -f ~/.local_aliases ]] && source ~/.local_aliases
