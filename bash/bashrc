@@ -10,3 +10,5 @@ sourcePartsInFile "$BASHD_INT"
 
 # The End.
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
