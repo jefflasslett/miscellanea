@@ -38,5 +38,5 @@ set shell=/bin/sh
 
 syntax on
 
-colorscheme ir_black
+colorscheme coding_goodness
 
