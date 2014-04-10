@@ -1,4 +1,3 @@
-
 UnBundle    'spf13/PIV'
 UnBundle    'arnaud-1b/vim-php-namespace'
 UnBundle    'klen/python-mode'
@@ -18,19 +17,22 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
-set clipboard=
+" "set clipboard=
 
 let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s %s"
 
 let g:spf13_no_autochdir = 1
 
+set guioptions=-m "no menubar
+set guioptions=-r "no right scrollbar
+
 let os = substitute(system('uname'), "\n", "", "")
 if os =~ "Linux"
   " Do Linux-specific stuff.
-  set guifont=Inconsolata\ for\ Powerline\ 14
+  set guifont=Inconsolata\ 14
 else
-  set guifont=Inconsolata\ for\ Powerline:h18
+  set guifont=Inconsolata:h18
 endif
 
 set number
@@ -39,4 +41,3 @@ set shell=/bin/sh
 syntax on
 
 colorscheme coding_goodness
-
