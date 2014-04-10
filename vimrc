@@ -24,8 +24,10 @@ let g:haddock_browser_callformat = "%s %s"
 
 let g:spf13_no_autochdir = 1
 
-set guioptions=-m "no menubar
-set guioptions=-r "no right scrollbar
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
 
 let os = substitute(system('uname'), "\n", "", "")
 if os =~ "Linux"
@@ -36,8 +38,6 @@ else
 endif
 
 set number
-set shell=/bin/sh
-
-syntax on
+set shell=/bin/sh"
 
 colorscheme coding_goodness
