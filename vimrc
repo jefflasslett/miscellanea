@@ -1,3 +1,4 @@
+UnBundle    'ack'
 UnBundle    'spf13/PIV'
 UnBundle    'arnaud-1b/vim-php-namespace'
 UnBundle    'klen/python-mode'
