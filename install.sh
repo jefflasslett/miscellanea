@@ -33,6 +33,8 @@ then
   [[ ! -e $HOME/.vim/colors/mycolours.vim ]] && ln -s $conf_d/mycolours.vim $HOME/.vim/colors/mycolours.vim
 else
   [[ ! -e $HOME/.vimrc.local ]] && (cd $HOME; ln -s $conf_d/vimrc .vimrc.local)
+  [[ ! -e $HOME/.vimrc.bundles.local ]] && (cd $HOME; ln -s $conf_d/vimrc.bundles .vimrc.bundles.local)
+  cp $conf_d/coding_goodness.vim $HOME/.spf13-vim-3/.vim/bundle/vim-colorschemes/colors/coding_goodness.vim
 fi
 
 if [ ! -d $HOME/.xmonad ]

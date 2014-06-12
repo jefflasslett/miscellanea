@@ -1,15 +1,3 @@
-UnBundle    'ack'
-UnBundle    'spf13/PIV'
-UnBundle    'arnaud-1b/vim-php-namespace'
-UnBundle    'klen/python-mode'
-UnBundle    'python.vim'
-UnBundle    'python_match.vim'
-UnBundle    'pythoncomplete'
-UnBundle    'derekwyatt/vim-scala'
-UnBundle    'derekwyatt/vim-sbt'
-UnBundle    'beyondwords/vim-twig'
-UnBundle    'airblade/vim-gitgutter'
-
 set nocompatible
 set autoindent
 set smartindent
