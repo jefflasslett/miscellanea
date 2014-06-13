@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Get the absolute path of this script.  It should be kept with the 
+# Get the absolute path of this script.  It should be kept with the
 # conf files that are to be installed.
 conf_d=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)
 
@@ -24,25 +24,12 @@ fi
 [[ ! -e $HOME/.i3status.conf ]] && (cd $HOME; ln -s $conf_d/i3status.conf .i3status.conf)
 [[ ! -e $HOME/.Xdefaults ]] && (cd $HOME; ln -s $conf_d/Xdefaults .Xdefaults)
 
-if [ ! -d $HOME/.spf13-vim-3 ]
-then
-  [[ ! -e $HOME/.vimrc ]] && (cd $HOME; ln -s $conf_d/vimrc .vimrc)
-
-  [[ ! -d $HOME/.vim/colors ]] && mkdir -p $HOME/.vim/colors
-
-  [[ ! -e $HOME/.vim/colors/mycolours.vim ]] && ln -s $conf_d/mycolours.vim $HOME/.vim/colors/mycolours.vim
-else
-  [[ ! -e $HOME/.vimrc.local ]] && (cd $HOME; ln -s $conf_d/vimrc .vimrc.local)
-  [[ ! -e $HOME/.vimrc.bundles.local ]] && (cd $HOME; ln -s $conf_d/vimrc.bundles .vimrc.bundles.local)
-  cp $conf_d/coding_goodness.vim $HOME/.spf13-vim-3/.vim/bundle/vim-colorschemes/colors/coding_goodness.vim
-fi
-
 if [ ! -d $HOME/.xmonad ]
 then
   mkdir $HOME/.xmonad
   (cd $HOME/.xmonad; ln -s $conf_d/xmonad.hs xmonad.hs)
 fi
-  
+
 if [ ! -d $HOME/.yi ]
 then
   mkdir $HOME/.yi
