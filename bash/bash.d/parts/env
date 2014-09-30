@@ -1,3 +1,5 @@
 export PATH=$(ruby -rubygems -e "puts Gem.user_dir"):$HOME/bin:$HOME/.cabal/bin:$PATH
 export HISTCONTROL=ignorespace
+export HISTSIZE=10000
+export EDITOR=vim
 
