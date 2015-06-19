@@ -8,33 +8,33 @@ echo "Config dir is \"$conf_d\""
 
 OP_SYS="$(uname)"
 
-if [[ "$OP_SYS" = "Darwin" ]]
+# if [[ "$OP_SYS" = "Darwin" ]]
+# then
+if [ ! -d $HOME/.bash.d ]
 then
-  if [ ! -d $HOME/.bash.d ]
-  then
-    (
-      cd $HOME
-      ln -s $conf_d/bash/bash.d .bash.d
-      [[ ! -e $HOME/.bash_profile ]] && ln -s $conf_d/bash/bash_profile .bash_profile
-      [[ ! -e $HOME/.profile ]] && ln -s $conf_d/bash/bash_profile .profile
-      [[ ! -e $HOME/.bashrc ]] && ln -s $conf_d/bash/bashrc .bashrc
-      [[ ! -e $HOME/.bash_logout ]] && ln -s $conf_d/bash/bash_logout .bash_logout
-    )
-  fi
-else
-  if [ ! -d $HOME/.zsh.d ]
-  then
-    (
-      cd $HOME
-      ln -s $conf_d/zsh/zsh.d .zsh.d
-      [[ ! -e $HOME/.zprofile ]] && ln -s $conf_d/zsh/zprofile .zprofile
-      [[ ! -e $HOME/.zshrc ]] && ln -s $conf_d/zsh/zshrc .zshrc
-      [[ ! -e $HOME/.zlogout ]] && ln -s $conf_d/zsh/zlogout .zlogout
-      [[ ! -e $HOME/.zlogin ]] && ln -s $conf_d/zsh/zlogin .zlogin
-      [[ ! -e $HOME/.zshenv ]] && ln -s $conf_d/zsh/zshenv .zshenv
-    )
-  fi
+  (
+    cd $HOME
+    ln -s $conf_d/bash/bash.d .bash.d
+    [[ ! -e $HOME/.bash_profile ]] && ln -s $conf_d/bash/bash_profile .bash_profile
+    [[ ! -e $HOME/.profile ]] && ln -s $conf_d/bash/bash_profile .profile
+    [[ ! -e $HOME/.bashrc ]] && ln -s $conf_d/bash/bashrc .bashrc
+    [[ ! -e $HOME/.bash_logout ]] && ln -s $conf_d/bash/bash_logout .bash_logout
+  )
 fi
+# else
+#   if [ ! -d $HOME/.zsh.d ]
+#   then
+#     (
+#       cd $HOME
+#       ln -s $conf_d/zsh/zsh.d .zsh.d
+#       [[ ! -e $HOME/.zprofile ]] && ln -s $conf_d/zsh/zprofile .zprofile
+#       [[ ! -e $HOME/.zshrc ]] && ln -s $conf_d/zsh/zshrc .zshrc
+#       [[ ! -e $HOME/.zlogout ]] && ln -s $conf_d/zsh/zlogout .zlogout
+#       [[ ! -e $HOME/.zlogin ]] && ln -s $conf_d/zsh/zlogin .zlogin
+#       [[ ! -e $HOME/.zshenv ]] && ln -s $conf_d/zsh/zshenv .zshenv
+#     )
+#   fi
+# fi
 
 [[ ! -e $HOME/.tmux.conf ]] && (cd $HOME; ln -s $conf_d/tmux.conf .tmux.conf)
 
