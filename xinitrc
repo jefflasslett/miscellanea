@@ -1,6 +1,7 @@
 #!/bin/sh
 
 export SSH_ASKPASS=ssh-askpass
+export SAL_USE_VCLPLUGIN=gen
 
 # xrandr --setprovideroutputsource modesetting NVIDIA-0
 # xrandr --auto
