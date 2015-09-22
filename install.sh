@@ -36,27 +36,27 @@ fi
 #   fi
 # fi
 
-[[ ! -e $HOME/.tmux.conf ]] && (cd $HOME; ln -s $conf_d/tmux.conf .tmux.conf)
+#[[ ! -e $HOME/.tmux.conf ]] && (cd $HOME; ln -s $conf_d/tmux.conf .tmux.conf)
 
-if [[ "$OP_SYS" = "Linux" ]]
-then
-  [[ ! -e $HOME/.xinitrc ]] && (cd $HOME; ln -s $conf_d/xinitrc .xinitrc)
-  [[ ! -e $HOME/.xmobarrc ]] && (cd $HOME; ln -s $conf_d/xmobarrc .xmobarrc)
-  [[ ! -e $HOME/.i3status.conf ]] && (cd $HOME; ln -s $conf_d/i3status.conf .i3status.conf)
-  [[ ! -e $HOME/.Xdefaults ]] && (cd $HOME; ln -s $conf_d/Xdefaults .Xdefaults)
-
-  if [ ! -d $HOME/.xmonad ]
-  then
-  mkdir $HOME/.xmonad
-  (cd $HOME/.xmonad; ln -s $conf_d/xmonad.hs xmonad.hs)
-  fi
-
-  if [ ! -d $HOME/.yi ]
-  then
-  mkdir $HOME/.yi
-  (cd $HOME/.yi; ln -s $conf_d/yi.hs yi.hs)
-  fi
-fi
+# if [[ "$OP_SYS" = "Linux" ]]
+# then
+#   [[ ! -e $HOME/.xinitrc ]] && (cd $HOME; ln -s $conf_d/xinitrc .xinitrc)
+#   [[ ! -e $HOME/.xmobarrc ]] && (cd $HOME; ln -s $conf_d/xmobarrc .xmobarrc)
+#   [[ ! -e $HOME/.i3status.conf ]] && (cd $HOME; ln -s $conf_d/i3status.conf .i3status.conf)
+#   [[ ! -e $HOME/.Xdefaults ]] && (cd $HOME; ln -s $conf_d/Xdefaults .Xdefaults)
+# 
+#   if [ ! -d $HOME/.xmonad ]
+#   then
+#   mkdir $HOME/.xmonad
+#   (cd $HOME/.xmonad; ln -s $conf_d/xmonad.hs xmonad.hs)
+#   fi
+# 
+#   if [ ! -d $HOME/.yi ]
+#   then
+#   mkdir $HOME/.yi
+#   (cd $HOME/.yi; ln -s $conf_d/yi.hs yi.hs)
+#   fi
+# fi
 
 if [ ! -d $HOME/bin ]
 then
