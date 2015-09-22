@@ -14,6 +14,7 @@ alias gcam='git commit -a -m '
 alias grh='git reset --hard'
 alias grom='git rebase origin master'
 alias gl='git log --graph --color --abbrev-commit --pretty=oneline'
+alias gld='git log --graph --color --pretty="%C(yellow)%h %Cred|%ci| %Creset%s"'
 alias gap='git add -p'
 alias gau='git add -u'
 
