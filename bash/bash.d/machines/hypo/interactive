@@ -3,5 +3,6 @@ env
 colours
 alias
 prompt
+rbenv
 gems
 
