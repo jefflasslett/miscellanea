@@ -20,13 +20,20 @@ alias gld='git log --graph --color --pretty="%C(yellow)%h %Cred|%ci| %Creset%s"'
 alias gap='git add -p'
 alias gau='git add -u'
 
+# general software project aliases
+
+alias penv='echo $PRJ_ENV'
+alias penvd='export PRJ_ENV=development'
+alias penvt='export PRJ_ENV=test'
+alias penvs='export PRJ_ENV=staging'
+alias penvp='export PRJ_ENV=production'
 
 # Rails aliases
 
 alias renv='echo $RAILS_ENV'
 alias renvd='export RAILS_ENV=development'
 alias renvt='export RAILS_ENV=test'
-# alias renvp='export RAILS_ENV=production'
+alias renvp='export RAILS_ENV=production'
 
 alias be='bundle exec'
 
