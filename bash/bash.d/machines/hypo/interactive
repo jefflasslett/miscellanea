@@ -5,4 +5,5 @@ alias
 prompt
 rbenv
 gems
+tmuxifier
 
