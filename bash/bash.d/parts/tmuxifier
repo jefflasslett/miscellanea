@@ -1,3 +1,4 @@
 export PATH="$HOME/prj/tmuxifier/bin:$PATH"
 export TMUXIFIER_TMUX_OPTS="-2"
+export TMUXIFIER_LAYOUT_PATH="$HOME/.local/share/tmuxifier/layouts"
 eval "$(tmuxifier init -)"
