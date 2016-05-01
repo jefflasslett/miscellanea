@@ -3,7 +3,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Util.EZConfig( additionalKeys )
 
 myConfig =
-  defaultConfig { terminal = "sakura"
+  defaultConfig { terminal = "urxvt"
                 , manageHook = manageDocks <+> manageHook defaultConfig
                 , layoutHook = avoidStruts $ layoutHook defaultConfig
                 } `additionalKeys`

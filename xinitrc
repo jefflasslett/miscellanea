@@ -6,6 +6,7 @@ export SAL_USE_VCLPLUGIN=gen
 # xrandr --setprovideroutputsource modesetting NVIDIA-0
 # xrandr --auto
 
+xrdb $HOME/.Xresources
 xsetroot -solid black -cursor_name left_ptr
 
 /home/jeff/prj/miscellanea/nocaps.sh
