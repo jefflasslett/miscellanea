@@ -1,3 +1,12 @@
+# helper functions
+
+function new-alias() {
+  local alias_name="$1"
+  local cmd="$2"
+
+  echo "alias ${1}='${2}'" >> "$BASH_SOURCE"
+}
+
 # editor
 alias e="nvim"
 
@@ -40,3 +49,4 @@ alias be='bundle exec'
 # misc
 alias tmux='tmux -2'
 [[ -f ~/.local_aliases ]] && source ~/.local_aliases
+alias tls='tmuxifier load-session'
