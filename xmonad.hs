@@ -2,9 +2,14 @@ import XMonad
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.EZConfig( additionalKeys )
 
+myManageHook = composeAll
+   [ className =? "gimp"  --> doFloat
+   , manageDocks
+   ]
+
 myConfig =
   defaultConfig { terminal = "urxvt"
-                , manageHook = manageDocks <+> manageHook defaultConfig
+                , manageHook = myManageHook <+> manageHook defaultConfig
                 , layoutHook = avoidStruts $ layoutHook defaultConfig
                 } `additionalKeys`
                 [ ( ( mod1Mask .|. controlMask, xK_m ), spawn "synclient TouchpadOff=0" )
