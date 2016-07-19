@@ -48,5 +48,7 @@ alias be='bundle exec'
 
 # misc
 alias tmux='tmux -2'
-[[ -f ~/.local_aliases ]] && source ~/.local_aliases
 alias tls='tmuxifier load-session'
+
+[[ -f ~/.local_aliases ]] && source ~/.local_aliases
+
