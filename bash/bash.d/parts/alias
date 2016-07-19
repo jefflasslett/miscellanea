@@ -8,7 +8,7 @@ function new-alias() {
 }
 
 # editor
-alias e="nvim"
+alias e="emacsclient"
 
 # shell
 
