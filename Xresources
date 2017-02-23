@@ -1,3 +1,6 @@
+Emacs.FontBackend:                     xft,x
+Emacs.font:                            Source Code Pro:size=16
+
 !URxvt.termName:                       URXVT
 !URxvt.geometry:                       geometry
 !URxvt.chdir:                          string
