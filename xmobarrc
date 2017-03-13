@@ -7,6 +7,7 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
        , lowerOnStart = True
        , persistent = False
        , hideOnStart = False
+       , overrideRedirect = False
        , commands = [ Run StdinReader
                     ]
        , template = "%StdinReader%"
