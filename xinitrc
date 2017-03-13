@@ -9,7 +9,7 @@ export SAL_USE_VCLPLUGIN=gen
 xrdb $HOME/.Xresources
 xsetroot -solid black -cursor_name left_ptr
 
-/home/jeff/prj/miscellanea/nocaps.sh
+$HOME/prj/miscellanea/nocaps.sh
 i3status | xmobar &
 ssh-add
 exec xmonad
