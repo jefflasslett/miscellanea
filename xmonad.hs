@@ -8,17 +8,17 @@ myManageHook = composeAll
    ]
 
 myConfig =
-  def { terminal = "urxvt"
-      , manageHook = myManageHook <+> manageHook def
-      , layoutHook = avoidStruts $ layoutHook def
-      , handleEventHook = docksEventHook <+> handleEventHook def
-      } `additionalKeys`
-      [ ( ( mod1Mask .|. controlMask, xK_m ), spawn "synclient TouchpadOff=0" )
-      , ( ( mod1Mask .|. controlMask .|. shiftMask, xK_m ), spawn "synclient TouchpadOff=1" )
-      , ( ( mod1Mask .|. shiftMask, xK_4 ), spawn "shutter -s" )
-      , ( ( mod1Mask .|. controlMask, xK_t ), spawn "thunderbird" )
-      , ( ( mod1Mask .|. controlMask, xK_f ), spawn "firefox" )
-      ]
+  docks $ def { terminal = "urxvt"
+              , manageHook = myManageHook <+> manageHook def
+              , layoutHook = avoidStruts $ layoutHook def
+              , handleEventHook = docksEventHook <+> handleEventHook def
+              } `additionalKeys`
+              [ ( ( mod1Mask .|. controlMask, xK_m ), spawn "synclient TouchpadOff=0" )
+              , ( ( mod1Mask .|. controlMask .|. shiftMask, xK_m ), spawn "synclient TouchpadOff=1" )
+              , ( ( mod1Mask .|. shiftMask, xK_4 ), spawn "shutter -s" )
+              , ( ( mod1Mask .|. controlMask, xK_t ), spawn "thunderbird" )
+              , ( ( mod1Mask .|. controlMask, xK_f ), spawn "firefox" )
+              ]
 
 main = xmonad myConfig
 
