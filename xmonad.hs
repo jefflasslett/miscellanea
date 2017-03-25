@@ -9,9 +9,7 @@ myManageHook = composeAll
 
 myConfig =
   docks $ def { terminal = "urxvt"
-              , manageHook = myManageHook <+> manageHook def
               , layoutHook = avoidStruts $ layoutHook def
-              , handleEventHook = docksEventHook <+> handleEventHook def
               } `additionalKeys`
               [ ( ( mod1Mask .|. controlMask, xK_m ), spawn "synclient TouchpadOff=0" )
               , ( ( mod1Mask .|. controlMask .|. shiftMask, xK_m ), spawn "synclient TouchpadOff=1" )
