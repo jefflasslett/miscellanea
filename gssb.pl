@@ -6,7 +6,7 @@ my $gs_out = `git status -sb 2>&1`;
 
 my @gs_out_lines = split( /\n/, $gs_out );
 
-if ( $gs_out_lines[0] =~ /^fatal: Not a git repository/ ) {
+if ( $gs_out_lines[0] =~ /^fatal: Not a git repository/i ) {
   print "n/a";
   exit 0;
 }
