@@ -5,6 +5,10 @@ BASHD_GEN="$BASHD/machines/$HOSTNAME/general"
 BASHD_INT="$BASHD/machines/$HOSTNAME/interactive"
 BASHD_LOG="$BASHD/machines/$HOSTNAME/login"
 
+BASHD_GEN_D="$BASHD/machines/$HOSTNAME/general.d"
+BASHD_INT_D="$BASHD/machines/$HOSTNAME/interactive.d"
+BASHD_LOG_D="$BASHD/machines/$HOSTNAME/login.d"
+
 BASHD_PARTS="$BASHD/parts"
 
 # Test if the shell is interactive.
@@ -18,7 +22,14 @@ function isInteractive {
 function sourcePartsInFile {
   local parts_list="$1"
 
+  # echo "sourcePartsInFile start"
+
+  # echo "parts list: $1"
+
   [[ -f "$parts_list" ]] || return
+
+  # echo "$PATH"
+  # echo "============================================================"
 
   while read p
   do
@@ -26,8 +37,29 @@ function sourcePartsInFile {
     local part_path="$BASHD_PARTS/$p"
 
     [[ -f "$part_path" ]] || continue
+    # echo "sourcing part: $part_path"
     source "$part_path"
 
   done < "$parts_list"
+  # echo "sourcePartsInFile end"
+}
+
+function sourcePartsInDir {
+
+  local parts_dir="$1"
+
+  # echo "sourcePartsInDir start"
+  [[ -d "$parts_dir" ]] || return
+
+  # echo "sourcePartsInDir parts start"
+
+  for part in "${parts_dir}"/*
+  do
+    [[ -f "$part" ]] || continue
+    # echo "sourcing part: $part"
+    source "$part"
+  done
+
+  # echo "sourcePartsInDir end"
 }
 

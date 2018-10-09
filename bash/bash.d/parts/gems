@@ -1,6 +1,2 @@
-PATH=/home/jeff/.gem/ruby/2.5.0/bin:$PATH
-PATH=/home/jeff/.gem/ruby/2.4.0/bin:$PATH
-PATH=/home/jeff/.gem/ruby/2.3.0/bin:$PATH
-PATH=/home/jeff/.gem/ruby/2.2.0/bin:$PATH
-PATH=/home/jeff/.gem/ruby/1.9.1/bin:$PATH
+export PATH=$(ruby -rrubygems -e "puts Gem.user_dir")/bin:$PATH
 

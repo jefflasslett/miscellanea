@@ -3,12 +3,18 @@
 # This is executed by bash when starting an interactive, non-login shell.
 #
 
+# echo "TOP============================================================"
+# echo "$PATH"
+# echo "TOP============================================================"
+
 source ~/.bash.d/helpers
 
-sourcePartsInFile "$BASHD_GEN"
-sourcePartsInFile "$BASHD_INT"
+#sourcePartsInFile "$BASHD_GEN"
+#sourcePartsInFile "$BASHD_INT"
+
+sourcePartsInDir "$BASHD_GEN_D"
+sourcePartsInDir "$BASHD_INT_D"
+
+#echo "bashrc read"
 
 # The End.
-
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

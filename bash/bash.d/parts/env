@@ -1,4 +1,4 @@
-export PATH=$(ruby -rrubygems -e "puts Gem.user_dir")/bin:$HOME/.local/bin:$HOME/bin:$HOME/.cabal/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/bin:$HOME/.cabal/bin:$PATH
 export HISTCONTROL=ignorespace
 export HISTSIZE=10000
 export EDITOR=emacs
