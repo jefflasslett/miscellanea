@@ -1,7 +1,7 @@
 export PATH=$HOME/.local/bin:$HOME/bin:$HOME/.cabal/bin:$PATH
 export HISTCONTROL=ignorespace
 export HISTSIZE=10000
-export EDITOR=emacs
+export EDITOR='emacsclient -c'
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export GTAGSLABEL=ctags

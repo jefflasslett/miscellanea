@@ -1,23 +1,27 @@
-#!/bin/sh
-
-export SSH_ASKPASS=ssh-askpass
-export SAL_USE_VCLPLUGIN=gen
-
-# xrandr --setprovideroutputsource modesetting NVIDIA-0
-# xrandr --auto
 
 xrdb $HOME/.Xresources
-xsetroot -solid black -cursor_name left_ptr
 
-xautolock -time 30 -locker slock &
+systemctl start --user emacs
 
-# if [ -d /etc/X11/xinit/xinitrc.d ] ; then for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do [ -x "$f" ] && . "$f"
-#   done
-#   unset f
-# fi
+case "${DESKTOP_ENV}" in
+'XMONAD')
+  export SAL_USE_VCLPLUGIN=gen
+  export SSH_ASKPASS=ssh-askpass
 
-$HOME/prj/miscellanea/nocaps.sh
-i3status | xmobar &
-ssh-add
-exec xmonad
+  $HOME/prj/miscellanea/nocaps.sh
+  xsetroot -solid black -cursor_name left_ptr
+  xautolock -time 30 -locker slock &
+  i3status | xmobar &
+  ssh-add exec xmonad
+  ;;
+
+'GNOME')
+  export GDK_BACKEND=x11
+
+  exec gnome-session
+  ;;
+
+*)
+  ;;
+esac
 
