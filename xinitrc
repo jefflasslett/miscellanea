@@ -1,7 +1,6 @@
-
 xrdb $HOME/.Xresources
 
-systemctl start --user emacs
+# systemctl start --user emacs
 
 case "${DESKTOP_ENV}" in
 'XMONAD')

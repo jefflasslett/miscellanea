@@ -12,3 +12,4 @@ sourcePartsInDir "$BASHD_LOG_D"
 
 echo "bash_profile read"
 # The End.
+
