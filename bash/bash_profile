@@ -10,6 +10,5 @@ sourcePartsInDir "$BASHD_LOG_D"
 
 [[ isInteractive ]] && sourcePartsInDir "$BASHD_INT_D"
 
-echo "bash_profile read"
 # The End.
 

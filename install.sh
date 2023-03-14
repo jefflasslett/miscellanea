@@ -18,6 +18,7 @@ then
     [[ ! -e $HOME/.bashrc ]] && ln -s $conf_d/bash/bashrc .bashrc
     [[ ! -e $HOME/.bash_logout ]] && ln -s $conf_d/bash/bash_logout .bash_logout
   )
+fi
 
 [[ ! -e $HOME/.tmux.conf ]] && (cd $HOME; ln -s $conf_d/tmux.conf .tmux.conf)
 
