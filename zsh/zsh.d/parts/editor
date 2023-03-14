@@ -1,7 +1,0 @@
-export EDITOR=/usr/bin/vim
-export VISUAL=/usr/bin/vim
-export KEYTIMEOUT=1
-
-
-bindkey -v
-
