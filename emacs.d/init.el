@@ -45,6 +45,8 @@
 
 (setq treesit-language-source-alist
    '((bash "https://github.com/tree-sitter/tree-sitter-bash")
+     (c "https://github.com/tree-sitter/tree-sitter-c")
+     (cpp "https://github.com/tree-sitter/tree-sitter-cpp")
      (css "https://github.com/tree-sitter/tree-sitter-css")
      (elisp "https://github.com/Wilfred/tree-sitter-elisp")
      (html "https://github.com/tree-sitter/tree-sitter-html")
@@ -200,6 +202,7 @@ If the new path's directories does not exist, create them."
   (setq major-mode-remap-alist
         '((yaml-mode . yaml-ts-mode)
           (bash-mode . bash-ts-mode)
+          (c-mode . c-ts-mode)
           (js2-mode . js-ts-mode)
           (json-mode . json-ts-mode)
           (ruby-mode . ruby-ts-mode)))
@@ -265,7 +268,7 @@ If the new path's directories does not exist, create them."
 
   ;; Configure hooks to automatically turn-on eglot for selected modes
   :hook
-  ((ruby-ts-mode) . eglot-ensure)
+  ((ruby-ts-mode c-ts-mode bash-ts-mode) . eglot-ensure)
 
   :custom
   (eglot-send-changes-idle-time 0.1)
